@@ -1,6 +1,6 @@
-package cinemaApplication.dao
+package org.example.cinema.application.dao
 
-import cinemaApplication.entity.Movie
+import org.example.cinema.application.entity.Movie
 
 // интерфейс объекта, который отвечает за фильмы
 interface MovieDao {

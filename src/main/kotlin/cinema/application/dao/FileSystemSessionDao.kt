@@ -1,13 +1,13 @@
-package cinemaApplication.dao
+package org.example.cinema.application.dao
 
-import cinemaApplication.entity.Place
-import cinemaApplication.entity.Session
-import cinemaApplication.entity.Time
-import cinemaApplication.entity.Time.Companion.getTimeRightNow
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import org.example.cinema.application.entity.Place
+import org.example.cinema.application.entity.Session
+import org.example.cinema.application.entity.Time
+import org.example.cinema.application.entity.Time.Companion.getTimeRightNow
 import java.io.File
 
 @Serializable

@@ -1,7 +1,7 @@
 
-import cinemaApplication.consoleInterface.parsePlace
-import cinemaApplication.dao.CinemaDao
-import cinemaApplication.entity.Session
+import org.example.cinema.application.console.parsePlace
+import org.example.cinema.application.dao.CinemaDao
+import org.example.cinema.application.entity.Session
 
 class SellTicketWindow(private var session: Session, override var parent: Window?, private var cinemaDao: CinemaDao) : Window {
 

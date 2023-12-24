@@ -1,10 +1,10 @@
-package cinemaApplication.consoleInterface
+package org.example.cinema.application.console
 
 import SelectionWindow
 import Window
-import cinemaApplication.dao.CinemaDao
-import cinemaApplication.entity.Movie
-import cinemaApplication.entity.Time.Companion.parseTimeFromConsole
+import org.example.cinema.application.dao.CinemaDao
+import org.example.cinema.application.entity.Movie
+import org.example.cinema.application.entity.Time.Companion.parseTimeFromConsole
 
 class MovieWindow(
     private var cinema: CinemaDao,

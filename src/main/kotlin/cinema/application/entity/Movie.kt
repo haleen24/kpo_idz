@@ -1,4 +1,4 @@
-package cinemaApplication.entity
+package org.example.cinema.application.entity
 
 import kotlinx.serialization.Serializable
 

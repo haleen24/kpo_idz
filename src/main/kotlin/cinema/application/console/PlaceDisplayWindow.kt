@@ -1,9 +1,9 @@
-package cinemaApplication.consoleInterface
+package org.example.cinema.application.console
 
 import Window
-import cinemaApplication.entity.Session
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import org.example.cinema.application.entity.Session
 import java.io.File
 import java.io.IOException
 

@@ -1,4 +1,4 @@
-package cinemaApplication.consoleInterface
+package cinema.application.console
 
 import kotlinx.serialization.Serializable
 

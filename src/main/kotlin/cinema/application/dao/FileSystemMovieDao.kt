@@ -1,10 +1,10 @@
-package cinemaApplication.dao
+package org.example.cinema.application.dao
 
-import cinemaApplication.entity.Movie
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import org.example.cinema.application.entity.Movie
 import java.io.File
 
 @Serializable

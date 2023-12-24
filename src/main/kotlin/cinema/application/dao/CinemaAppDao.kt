@@ -1,6 +1,6 @@
-package cinemaApplication.dao
+package org.example.cinema.application.dao
 
-import cinemaApplication.entity.*
+import org.example.cinema.application.entity.*
 
 class CinemaAppDao(
     private var movieDataBase: MovieDao,

@@ -1,6 +1,7 @@
-package cinemaApplication.consoleInterface
+package org.example.cinema.application.console
 
 import Window
+import cinema.application.console.Account
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json

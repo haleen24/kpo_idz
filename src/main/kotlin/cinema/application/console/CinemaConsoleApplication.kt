@@ -1,13 +1,15 @@
+@file:Suppress("PackageDirectoryMismatch")
 
-package cinemaApplication.consoleInterface
+package org.example.cinema.application.console
 
 import SelectionWindow
 import SellTicketWindow
 import Window
-import cinemaApplication.dao.CinemaDao
-import cinemaApplication.entity.Place
-import cinemaApplication.entity.Session
-import org.example.cinemaApp.console_interface.*
+import cinema.application.console.AuthorizationWindow
+import org.example.cinema.application.dao.CinemaDao
+import org.example.cinema.application.entity.Place
+import org.example.cinema.application.entity.Session
+import cinema.application.console.MovieAddWindow
 
 
 fun parsePlace(session: Session): Place? {

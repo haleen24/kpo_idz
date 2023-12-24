@@ -1,8 +1,8 @@
-package cinemaApplication.dao
+package org.example.cinema.application.dao
 
-import cinemaApplication.entity.Place
-import cinemaApplication.entity.Session
-import cinemaApplication.entity.Time
+import org.example.cinema.application.entity.Place
+import org.example.cinema.application.entity.Session
+import org.example.cinema.application.entity.Time
 
 // интерфейс объекта, который отвечает за сессии
 interface SessionDao {
