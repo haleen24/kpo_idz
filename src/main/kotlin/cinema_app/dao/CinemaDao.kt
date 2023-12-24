@@ -19,9 +19,9 @@ interface CinemaDao {
 
     fun refundTicket(session: Session, place: Place): Boolean
 
-    fun changeTime(session: Session, time: Time): Unit
+    fun changeTime(session: Session, time: Time)
 
-    fun changeDescription(movie: Movie, description: String): Unit
+    fun changeDescription(movie: Movie, description: String)
 
     fun addMovie(movie: Movie): Boolean
 

@@ -5,6 +5,7 @@ import java.time.DateTimeException
 import java.time.LocalDateTime
 
 
+@Suppress("EqualsOrHashCode")
 @Serializable
 class Time(var year: Int, var month: Int, var day: Int, var hour: Int, var minute: Int) {
 
@@ -16,6 +17,7 @@ class Time(var year: Int, var month: Int, var day: Int, var hour: Int, var minut
             return Time(time.year, time.monthValue, time.dayOfMonth, time.hour, time.minute)
         }
 
+        @Suppress("MemberVisibilityCanBePrivate")
         fun getTime(year: Int, month: Int, day: Int, hour: Int, minute: Int): Time? {
 
             try {

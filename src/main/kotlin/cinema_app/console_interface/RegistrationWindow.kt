@@ -8,7 +8,7 @@ import java.io.File
 import java.security.MessageDigest
 import java.util.*
 
-class RegistrationWindow(override var parent: Window?, var mainWindow: Window, val filePath: String) : Window {
+class RegistrationWindow(override var parent: Window?, private var mainWindow: Window, private val filePath: String) : Window {
     override fun print() {
 
         println("Введите логи и пароль через enter")

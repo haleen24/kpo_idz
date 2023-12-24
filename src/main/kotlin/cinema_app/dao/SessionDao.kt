@@ -21,7 +21,7 @@ interface SessionDao {
 
     fun refundTicket(session: Session, place: Place): Boolean
 
-    fun changeTime(session: Session, time: Time): Unit
+    fun changeTime(session: Session, time: Time)
 
     fun takePlace(session: Session, place: Place): Boolean
 

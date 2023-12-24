@@ -79,7 +79,7 @@ class FileSystemSessionDao(private var filePath: String) : SessionDao {
         }
     }
 
-    override fun changeTime(session: Session, time: Time): Unit {
+    override fun changeTime(session: Session, time: Time) {
 
         session.sessionTime = time
 
@@ -101,6 +101,8 @@ class FileSystemSessionDao(private var filePath: String) : SessionDao {
         return true
     }
 
+    // Чтобы в случае чего, можно было обновлять извне
+    @Suppress("MemberVisibilityCanBePrivate")
     fun saveSessions() = File(filePath).writeText(Json.encodeToString(sessions))
 
 }

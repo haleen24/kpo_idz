@@ -9,7 +9,7 @@ interface MovieDao {
 
     fun addMovie(movie: Movie): Boolean
 
-    fun changeDescription(movie: Movie, description: String): Unit
+    fun changeDescription(movie: Movie, description: String)
 
     fun getMovieByName(name: String): Movie?
 

@@ -54,5 +54,7 @@ class FileSystemMovieDao(private var filePath: String) : MovieDao {
 
     override fun deleteMovie(movie: Movie) = movies.remove(movie).also { saveMovies() }
 
+    // Чтобы в случае чего, можно было обновлять извне
+    @Suppress("MemberVisibilityCanBePrivate")
     fun saveMovies() = File(filePath).writeText(Json.encodeToString(movies))
 }
