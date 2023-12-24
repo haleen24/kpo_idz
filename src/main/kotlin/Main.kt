@@ -1,8 +1,7 @@
 package org.example
 
-import cinema_app.dao.*
-import org.example.cinema_app.console_interface.CinemaConsoleApplication
-import org.example.cinema_app.dao.FileSystemMovieDao
+import cinemaApplication.consoleInterface.CinemaConsoleApplication
+import cinemaApplication.dao.*
 import kotlin.io.path.Path
 
 

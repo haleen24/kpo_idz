@@ -1,9 +1,9 @@
-package cinema_app.dao
+package cinemaApplication.dao
 
-import cinema_app.entity.Movie
-import cinema_app.entity.Place
-import cinema_app.entity.Session
-import cinema_app.entity.Time
+import cinemaApplication.entity.Movie
+import cinemaApplication.entity.Place
+import cinemaApplication.entity.Session
+import cinemaApplication.entity.Time
 
 
 // интерфейс приложения кинотеатра

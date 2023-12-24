@@ -1,8 +1,9 @@
-package org.example.cinema_app.console_interface
+package org.example.cinemaApp.console_interface
 
 import Window
-import cinema_app.dao.CinemaDao
-import cinema_app.entity.Movie
+import cinemaApplication.consoleInterface.CinemaConsoleApplication
+import cinemaApplication.dao.CinemaDao
+import cinemaApplication.entity.Movie
 
 class MovieAddWindow(
     private var cinemaDao: CinemaDao,

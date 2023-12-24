@@ -1,17 +1,17 @@
-package org.example.cinema_app.console_interface
+package org.example.cinemaApp.console_interface
 
 import Window
+import cinemaApplication.consoleInterface.Account
 import kotlinx.serialization.SerializationException
-import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.File
 import java.security.MessageDigest
 import java.util.*
 
-class RegistrationWindow(override var parent: Window?, private var mainWindow: Window, private val filePath: String) : Window {
+class AuthorizationWindow(override var parent: Window?, private var mainWindow: Window, private val filePath: String) : Window {
     override fun print() {
 
-        println("Введите логи и пароль через enter")
+        println("Введите логин и пароль через enter")
 
     }
 
@@ -22,11 +22,7 @@ class RegistrationWindow(override var parent: Window?, private var mainWindow: W
         if (!file.exists()) {
 
             file.createNewFile()
-
         }
-
-        val login = readln()
-        val password = readln()
 
         val accounts = try {
             Json.decodeFromString<MutableSet<Account>>(
@@ -43,13 +39,20 @@ class RegistrationWindow(override var parent: Window?, private var mainWindow: W
 
         }
 
-        if (accounts.find { it.login == login } != null) {
+        val login = readln()
 
-            println("Логин занят")
+        val password = readln()
+
+        val account = accounts.find { it.login == login }
+
+        if (account == null) {
+
+            println("Такого аккаунта не существует")
 
             return parent
         }
 
+        // шифровка полученного от пользователя пароля
         val md = MessageDigest.getInstance("SHA-256")
 
         val input = password.toByteArray()
@@ -58,9 +61,8 @@ class RegistrationWindow(override var parent: Window?, private var mainWindow: W
 
         val result = Base64.getEncoder().encodeToString(bytes)
 
-        accounts.add(Account(login, result))
+        // сравнение полученного и того, что имеется
+        return if (result == account.password) mainWindow.also { println("Успешно") } else parent.also { println("Неверный пароль") }
 
-        file.writeText(Json.encodeToString(accounts))
-        return mainWindow
     }
 }

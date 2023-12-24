@@ -1,4 +1,4 @@
-package org.example.cinema_app.console_interface
+package cinemaApplication.consoleInterface
 
 import kotlinx.serialization.Serializable
 

@@ -1,9 +1,9 @@
-package cinema_app.dao
+package cinemaApplication.dao
 
-import cinema_app.entity.Place
-import cinema_app.entity.Session
-import cinema_app.entity.Time
-import cinema_app.entity.Time.Companion.getTimeRightNow
+import cinemaApplication.entity.Place
+import cinemaApplication.entity.Session
+import cinemaApplication.entity.Time
+import cinemaApplication.entity.Time.Companion.getTimeRightNow
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.encodeToString

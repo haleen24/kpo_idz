@@ -1,8 +1,8 @@
-package org.example.cinema_app.console_interface
+package cinemaApplication.consoleInterface
 
 import Window
-import cinema_app.dao.CinemaDao
-import cinema_app.entity.Session
+import cinemaApplication.dao.CinemaDao
+import cinemaApplication.entity.Session
 
 class DeleteSessionWindow(
     override var parent: Window?,

@@ -1,9 +1,9 @@
-package org.example.cinema_app.console_interface
+package cinemaApplication.consoleInterface
 
 import Window
-import cinema_app.dao.CinemaDao
-import cinema_app.entity.Session
-import cinema_app.entity.Time.Companion.parseTimeFromConsole
+import cinemaApplication.dao.CinemaDao
+import cinemaApplication.entity.Session
+import cinemaApplication.entity.Time.Companion.parseTimeFromConsole
 
 class ChangeTimeWindow(
 

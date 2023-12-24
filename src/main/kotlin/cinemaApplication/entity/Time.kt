@@ -1,4 +1,4 @@
-package cinema_app.entity
+package cinemaApplication.entity
 
 import kotlinx.serialization.Serializable
 import java.time.DateTimeException

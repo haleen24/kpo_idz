@@ -1,7 +1,7 @@
-package cinema_app.console_interface
+package cinemaApplication.consoleInterface
 
 import Window
-import cinema_app.entity.Session
+import cinemaApplication.entity.Session
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.File

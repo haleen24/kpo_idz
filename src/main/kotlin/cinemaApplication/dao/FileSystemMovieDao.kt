@@ -1,7 +1,6 @@
-package org.example.cinema_app.dao
+package cinemaApplication.dao
 
-import cinema_app.dao.MovieDao
-import cinema_app.entity.Movie
+import cinemaApplication.entity.Movie
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.encodeToString

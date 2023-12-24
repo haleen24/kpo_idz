@@ -1,9 +1,8 @@
-package cinema_app.console_interface
+package cinemaApplication.consoleInterface
 
 import Window
-import cinema_app.dao.CinemaDao
-import cinema_app.entity.Session
-import org.example.cinema_app.console_interface.parsePlace
+import cinemaApplication.dao.CinemaDao
+import cinemaApplication.entity.Session
 
 
 class RefundTicketWindow(var session: Session, override var parent: Window?, private var cinemaDao: CinemaDao) :

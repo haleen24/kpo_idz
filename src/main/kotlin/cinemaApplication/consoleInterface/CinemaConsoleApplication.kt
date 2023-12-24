@@ -1,13 +1,13 @@
-package org.example.cinema_app.console_interface
+
+package cinemaApplication.consoleInterface
 
 import SelectionWindow
 import SellTicketWindow
 import Window
-import cinema_app.console_interface.PlaceDisplayWindow
-import cinema_app.console_interface.RefundTicketWindow
-import cinema_app.dao.CinemaDao
-import cinema_app.entity.Place
-import cinema_app.entity.Session
+import cinemaApplication.dao.CinemaDao
+import cinemaApplication.entity.Place
+import cinemaApplication.entity.Session
+import org.example.cinemaApp.console_interface.*
 
 
 fun parsePlace(session: Session): Place? {
