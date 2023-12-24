@@ -1,0 +1,26 @@
+[
+  {
+    "row": 1,
+    "place": 1,
+    "isBought": false,
+    "isOccupied": false
+  },
+  {
+    "row": 1,
+    "place": 2,
+    "isBought": false,
+    "isOccupied": false
+  },
+  {
+    "row": 2,
+    "place": 1,
+    "isBought": false,
+    "isOccupied": false
+  },
+  {
+    "row": 2,
+    "place": 2,
+    "isBought": false,
+    "isOccupied": false
+  }
+]

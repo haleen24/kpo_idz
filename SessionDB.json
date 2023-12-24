@@ -1,0 +1,40 @@
+[
+  {
+    "movieName": "Pulp Fiction",
+    "sessionTime": {
+      "year": 2022,
+      "month": 10,
+      "day": 10,
+      "hour": 10,
+      "minute": 10
+    },
+    "cinemaHall": {
+      "seats": [
+        {
+          "row": 1,
+          "place": 1,
+          "isBought": true,
+          "isOccupied": true
+        },
+        {
+          "row": 1,
+          "place": 2,
+          "isBought": false,
+          "isOccupied": false
+        },
+        {
+          "row": 2,
+          "place": 1,
+          "isBought": false,
+          "isOccupied": false
+        },
+        {
+          "row": 2,
+          "place": 2,
+          "isBought": false,
+          "isOccupied": false
+        }
+      ]
+    }
+  }
+]
