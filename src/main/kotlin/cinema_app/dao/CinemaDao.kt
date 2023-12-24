@@ -5,6 +5,8 @@ import cinema_app.entity.Place
 import cinema_app.entity.Session
 import cinema_app.entity.Time
 
+
+// интерфейс приложения кинотеатра
 interface CinemaDao {
 
     fun getSession(filter: (Session) -> Boolean = { true }): List<Session>

@@ -1,9 +1,12 @@
+package cinema_app.console_interface
+
+import Window
 import cinema_app.dao.CinemaDao
 import cinema_app.entity.Session
 import org.example.cinema_app.console_interface.parsePlace
 
 
-class ReFundTicketWindow(var session: Session, override var parent: Window?, private var cinemaDao: CinemaDao) :
+class RefundTicketWindow(var session: Session, override var parent: Window?, private var cinemaDao: CinemaDao) :
     Window {
     override fun print() {
 

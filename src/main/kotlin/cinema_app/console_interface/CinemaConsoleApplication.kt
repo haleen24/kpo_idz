@@ -1,10 +1,10 @@
 package org.example.cinema_app.console_interface
 
-import ReFundTicketWindow
 import SelectionWindow
 import SellTicketWindow
 import Window
 import cinema_app.console_interface.PlaceDisplayWindow
+import cinema_app.console_interface.RefundTicketWindow
 import cinema_app.dao.CinemaDao
 import cinema_app.entity.Place
 import cinema_app.entity.Session
@@ -41,8 +41,10 @@ class CinemaConsoleApplication(private var cinemaDao: CinemaDao) {
         runtimeReAssemble()
     }
 
+    // Сборка меню
     fun runtimeReAssemble() {
 
+        // основное окно
         mainWindow =
             SelectionWindow(
                 "1. Продажа билетов" +
@@ -53,6 +55,7 @@ class CinemaConsoleApplication(private var cinemaDao: CinemaDao) {
                 mutableMapOf(), null
             )
 
+        // окно продажи билетов
         val sessionsSellTicketWindow =
             SelectionWindow(
                 "\nВыберите сеанс (введите время нужного сеанса) в формате \"минута час день месяц год\":\n" + cinemaDao.getSession()
@@ -61,24 +64,26 @@ class CinemaConsoleApplication(private var cinemaDao: CinemaDao) {
                     .associate { it.sessionTime.toString() to SellTicketWindow(it, mainWindow, cinemaDao) }
                     .toMutableMap(), mainWindow
             )
-
+        // сохранение основного окна как точки, в которую можно выйти из окна продажи билетов
         sessionsSellTicketWindow.parent = mainWindow
 
         (mainWindow as SelectionWindow).mapWindow["1"] = sessionsSellTicketWindow
 
-        val sessionsReFundTicketWindow =
+        // окно возвратов
+        val sessionsRefundTicketWindow =
             SelectionWindow(
                 "\nВыберите сеанс (введите время нужного сеанса) в формате \"минута час день месяц год\":\n" + cinemaDao.getSession()
                     .joinToString(separator = "\n", transform = { "${it.movieName} ${it.sessionTime}" }),
                 cinemaDao.getSession()
-                    .associate { it.sessionTime.toString() to ReFundTicketWindow(it, mainWindow, cinemaDao) }
+                    .associate { it.sessionTime.toString() to RefundTicketWindow(it, mainWindow, cinemaDao) }
                     .toMutableMap(), mainWindow
             )
 
-        sessionsReFundTicketWindow.parent = mainWindow
+        sessionsRefundTicketWindow.parent = mainWindow
 
-        (mainWindow as SelectionWindow).mapWindow["2"] = sessionsReFundTicketWindow
+        (mainWindow as SelectionWindow).mapWindow["2"] = sessionsRefundTicketWindow
 
+        // окно для выбора отображения свободных/занятых мест
         val placeDisplayWindow = SelectionWindow(
             "\nВыберите сеанс(введите время нужного сеанса) в формате \"минута час день месяц год\":\n" + cinemaDao.getSession()
                 .joinToString(separator = "\n", transform = { "${it.movieName} ${it.sessionTime}" }),
@@ -90,6 +95,7 @@ class CinemaConsoleApplication(private var cinemaDao: CinemaDao) {
 
         (mainWindow as SelectionWindow).mapWindow["3"] = placeDisplayWindow
 
+        // окно просмотра фильмов
         val movieShowWindow =
             SelectionWindow(
                 "\nВведите имя фильма из списка ниже:\n" + cinemaDao.getMovies()
@@ -98,6 +104,7 @@ class CinemaConsoleApplication(private var cinemaDao: CinemaDao) {
                     .toMutableMap(), mainWindow
             )
 
+        // окно первичного выбора редактирования
         val movieChangeWindow = SelectionWindow(
             "\n1. Изменить существующий фильм или сеанс\n" +
                     "2. Добавить фильм",
@@ -108,6 +115,7 @@ class CinemaConsoleApplication(private var cinemaDao: CinemaDao) {
 
         (mainWindow as SelectionWindow).mapWindow["4"] = movieChangeWindow
 
+        // окно для отметки посещения сеансов
         val markPlaceWindow = SelectionWindow(
             "\nВыберите сеанс (введите время нужного сеанса) в формате \"минута час день месяц год\":\n" + cinemaDao.getSession()
                 .joinToString(separator = "\n", transform = { "${it.movieName} ${it.sessionTime}" }),
@@ -121,9 +129,22 @@ class CinemaConsoleApplication(private var cinemaDao: CinemaDao) {
         (mainWindow as SelectionWindow).mapWindow["5"] = markPlaceWindow
     }
 
-    fun start() {
+    fun start(accountFilePath: String) {
 
-        var currentWindow: Window? = mainWindow
+        // окно выбора авторизации/регистрации
+        var currentWindow: Window? = SelectionWindow(
+            "1.Авторизация\n2.Регистрация",
+            mutableMapOf(
+                "1" to AuthorizationWindow(null, mainWindow, accountFilePath),
+                "2" to RegistrationWindow(null, mainWindow, accountFilePath)
+            ),
+            null
+        )
+
+        (currentWindow as SelectionWindow).mapWindow["1"]!!.parent = currentWindow
+
+        currentWindow.mapWindow["2"]!!.parent = currentWindow
+
 
         while (currentWindow != null) {
 

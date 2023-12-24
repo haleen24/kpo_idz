@@ -4,6 +4,7 @@ import cinema_app.entity.Place
 import cinema_app.entity.Session
 import cinema_app.entity.Time
 
+// интерфейс объекта, который отвечает за сессии
 interface SessionDao {
 
     fun getSessions(): List<Session>

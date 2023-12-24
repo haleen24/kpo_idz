@@ -3,7 +3,7 @@ package org.example.cinema_app.console_interface
 import Window
 import cinema_app.dao.CinemaDao
 import cinema_app.entity.Session
-import cinema_app.entity.parseTime
+import cinema_app.entity.Time.Companion.parseTimeFromConsole
 
 class ChangeTimeWindow(
 
@@ -25,7 +25,7 @@ class ChangeTimeWindow(
 
     override fun stepIn(): Window? {
 
-        val time = parseTime() ?: return parent
+        val time = parseTimeFromConsole() ?: return parent
 
         cinemaDao.changeTime(session, time)
 

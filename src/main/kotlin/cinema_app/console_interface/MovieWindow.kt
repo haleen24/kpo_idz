@@ -4,7 +4,7 @@ import SelectionWindow
 import Window
 import cinema_app.dao.CinemaDao
 import cinema_app.entity.Movie
-import cinema_app.entity.parseTime
+import cinema_app.entity.Time.Companion.parseTimeFromConsole
 
 class MovieWindow(
     private var cinema: CinemaDao,
@@ -27,7 +27,7 @@ class MovieWindow(
 
             println("Введите новое время в формате \"минута час день месяц год\"")
 
-            val time = parseTime()
+            val time = parseTimeFromConsole()
 
             if (time == null) {
 

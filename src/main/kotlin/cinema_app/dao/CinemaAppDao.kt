@@ -32,7 +32,6 @@ class CinemaAppDao(
 
     override fun addMovie(movie: Movie) = movieDataBase.addMovie(movie)
 
-
     override fun deleteMovie(movie: Movie): Boolean =
         movieDataBase.deleteMovie(movie) && sessionDataBase.deleteSession { it.movieName == movie.name }
 

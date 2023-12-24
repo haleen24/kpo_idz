@@ -3,7 +3,7 @@ package cinema_app.dao
 import cinema_app.entity.Place
 import cinema_app.entity.Session
 import cinema_app.entity.Time
-import cinema_app.entity.getTimeRightNow
+import cinema_app.entity.Time.Companion.getTimeRightNow
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.encodeToString
@@ -11,13 +11,13 @@ import kotlinx.serialization.json.Json
 import java.io.File
 
 @Serializable
-class FileSystemSessionDao(private var path: String) : SessionDao {
+class FileSystemSessionDao(private var filePath: String) : SessionDao {
 
     private var sessions: MutableSet<Session>
 
     init {
 
-        val file = File(path)
+        val file = File(filePath)
 
         if (!file.exists()) {
 
@@ -101,6 +101,6 @@ class FileSystemSessionDao(private var path: String) : SessionDao {
         return true
     }
 
-    fun saveSessions() = File(path).writeText(Json.encodeToString(sessions))
+    fun saveSessions() = File(filePath).writeText(Json.encodeToString(sessions))
 
 }

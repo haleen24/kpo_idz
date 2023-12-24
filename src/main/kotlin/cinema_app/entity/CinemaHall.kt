@@ -3,7 +3,7 @@ package cinema_app.entity
 import kotlinx.serialization.Serializable
 
 @Serializable
-class CinemaHall() {
+class CinemaHall {
 
     private var seats = emptyList<Place>()
 

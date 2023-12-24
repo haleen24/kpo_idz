@@ -1,20 +1,20 @@
 [
   {
-    "movieName": "Pulp Fiction",
+    "movieName": "Barbie",
     "sessionTime": {
-      "year": 2022,
-      "month": 10,
-      "day": 10,
-      "hour": 10,
-      "minute": 10
+      "year": 2023,
+      "month": 12,
+      "day": 31,
+      "hour": 14,
+      "minute": 0
     },
     "cinemaHall": {
       "seats": [
         {
           "row": 1,
           "place": 1,
-          "isBought": true,
-          "isOccupied": true
+          "isBought": false,
+          "isOccupied": false
         },
         {
           "row": 1,

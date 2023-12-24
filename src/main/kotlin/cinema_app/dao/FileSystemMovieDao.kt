@@ -9,13 +9,13 @@ import kotlinx.serialization.json.Json
 import java.io.File
 
 @Serializable
-class FileSystemMovieDao(private var path: String) : MovieDao {
+class FileSystemMovieDao(private var filePath: String) : MovieDao {
 
     private var movies: MutableSet<Movie>
 
     init {
 
-        val file = File(path)
+        val file = File(filePath)
 
         if (!file.exists()) {
 
@@ -54,5 +54,5 @@ class FileSystemMovieDao(private var path: String) : MovieDao {
 
     override fun deleteMovie(movie: Movie) = movies.remove(movie).also { saveMovies() }
 
-    fun saveMovies() = File(path).writeText(Json.encodeToString(movies))
+    fun saveMovies() = File(filePath).writeText(Json.encodeToString(movies))
 }

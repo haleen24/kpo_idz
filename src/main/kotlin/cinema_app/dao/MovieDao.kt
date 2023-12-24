@@ -2,6 +2,7 @@ package cinema_app.dao
 
 import cinema_app.entity.Movie
 
+// интерфейс объекта, который отвечает за фильмы
 interface MovieDao {
 
     fun getMovies(): List<Movie>
